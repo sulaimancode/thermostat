@@ -30,6 +30,22 @@ Thermostat.prototype = {
     }
   },
 
+  usage: function() {
+    if (this._degrees < 18) {
+      return 'low';
+    }
+    if (this._degrees < 25 && this._degrees > 18) {
+      return 'medium';
+    }
+    else {
+      return 'high'
+    }
+  },
+
+  reset: function() {
+    this._degrees = 20
+  },
+
   isPowerSaver: function() {
     return this._powerSaver;
   },

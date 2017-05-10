@@ -78,5 +78,37 @@ describe('Thermostat', function() {
       expect(thermostat.isPowerSaver()).toEqual(true)
     });
   });
+  describe('#reset', function() {
+
+    it('resets the temperature to 20', function() {
+      thermostat.up()
+      thermostat.reset()
+      expect(thermostat.temperature()).toEqual(20)
+    });
+  });
+
+  describe('#usage', function() {
+
+    it('shows the current energy usage as low when temperature is below 18', function() {
+      var times = 3;
+      for(var i=0; i < times; i++){
+        thermostat.down();
+      };
+      expect(thermostat.usage()).toEqual('low')
+    });
+
+    it('shows the current energy usage as medium when temperature is 20', function() {
+      expect(thermostat.usage()).toEqual('medium')
+    });
+
+    it('shows the current energy usage as high when temperature is above 25', function() {
+      thermostat.powerSaverOff()
+      var times = 6;
+      for(var i=0; i < times; i++){
+        thermostat.up();
+      };
+      expect(thermostat.usage()).toEqual('high')
+    });
+  });
 
 });
