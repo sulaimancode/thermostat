@@ -13,13 +13,11 @@ Thermostat.prototype = {
   },
 
   down: function() {
-    this._degrees--
-    if (this._degrees >== 10) {
+    if (this._degrees <== 10) {
       throw 'can not decrease temperature below 10';
     }
     else {
-      return  this._planes.push(plane);
+      this._degrees--;
     }
   }
-
 };
