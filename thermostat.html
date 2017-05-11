@@ -10,15 +10,27 @@
 
 
 <body>
-  <div class='container'>
-    <h1 id='temp'> 20 &deg;C </h1>
-    <button> ^ </button>
-    <button> v </button>
+  <div id='medium' class='container'>
+    <div id='box'>
+    <!-- <h1 id='temp'> 20 &deg;C </h1> -->
+    <span id="temp"></span>
     <br/>
+    <button id='up' class='button'> + </button>
+    <button id='down' class='button'> - </button>
+    <button id='reset' class='button'>Reset</button>
+    <br/>
+    <br/>
+    <label> Power Saver
+      <br/>
     <label class='switch'>
-    <input type='checkbox'>
-    <div class='slider'></div>
+    <input id='checkbox' type='checkbox' class="checked">
+    <div class='slider round'></div>
   </label>
+  </label>
+</div>
   </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="src/thermostat.js"></script>
+  <script src="jQueryFile.js"></script>
 </body>
 </html>

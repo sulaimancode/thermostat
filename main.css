@@ -1,26 +1,91 @@
 .container {
   margin: auto;
-  width: 50%;
+  margin-top:10%;
+  width: 80%;
+  height: 500px;
   padding: 10px;
-  text-align: center
+  text-align: center;
+  border-style: groove;
+  border-width: thick;
+  border-radius: 50px;
+  /*background-color: red;*/
+
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.5) inset, 0 1px 1px #DDD;
+  border-radius:2px;
+
+  color:#666;
+  /*vertical-align: top;*/
+  /*line-height: 230px;*/
+  /*font-size: 12px;*/
 }
 
 button {
   width: 60px;
+  font-size: 30px;
+  border-radius: 5px
 }
 
 h1 {
-  font-size: 30px
+  font-size: 60px
+}
+
+.button {
+  /*display: inline-block;*/
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: black;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button:hover {background-color: #3e8e41}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }
 
 #temp {
   font-size: 40px;
 }
 
+#box {
+  width: 300px;
+  margin:0 auto;
+  margin-top: 10%;
+}
+
+#reset {
+  width: 200px;
+  margin:0 auto;
+  margin-top: 10%;
+}
+
+#low {
+background-color: green;
+}
+
+#medium {
+background-color: black;
+}
+
+#high {
+background-color: red;
+}
+
+
+
 .switch {
   position: relative;
   display: inline-block;
-  width: 100px;
+  width: 120px;
   height: 34px;
 }
 
@@ -33,7 +98,7 @@ h1 {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: red;
+  background-color: #ccc;
   -webkit-transition: .4s;
   transition: .4s;
 }
@@ -42,7 +107,7 @@ h1 {
   position: absolute;
   content: "";
   height: 26px;
-  width: 50px;
+  width: 26px;
   left: 4px;
   bottom: 4px;
   background-color: white;
@@ -55,11 +120,19 @@ input:checked + .slider {
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px green;
+  box-shadow: 0 0 1px #2196F3;
 }
 
 input:checked + .slider:before {
-  -webkit-transform: translateX(40px);
-  -ms-transform: translateX(40px);
-  transform: translateX(40px);
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(86px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
 }

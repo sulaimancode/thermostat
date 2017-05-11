@@ -3,6 +3,7 @@ describe('Thermostat', function() {
 
   beforeEach(function() {
     thermostat = new Thermostat();
+    spyOn(window, 'alert');
   });
 
   describe('#temperature', function() {
@@ -21,22 +22,22 @@ describe('Thermostat', function() {
 
     describe('when power save is on', function() {
       it('it does not increase temperature above 25', function() {
-        var times = 5;
+        var times = 6;
         for(var i=0; i < times; i++){
           thermostat.up();
         };
-        expect(function(){ thermostat.up() } ).toThrow("can not increase temperature above 25 when power saver is on")
+        expect(window.alert).toHaveBeenCalledWith('can not increase temperature above 25 when power saver is on');
       });
     });
 
     describe('when power save is off', function() {
       it('it does not increase temperature above 32', function() {
         thermostat.powerSaverOff()
-        var times = 12;
+        var times = 13;
         for(var i=0; i < times; i++){
           thermostat.up();
         };
-        expect(function(){ thermostat.up() } ).toThrow("can not increase temperature above 32")
+        expect(window.alert).toHaveBeenCalledWith('can not increase temperature above 32');
       });
     });
   });
@@ -51,11 +52,11 @@ describe('Thermostat', function() {
     describe('when temperature is 10', function() {
 
       it('throws error message', function() {
-        var times = 10;
+        var times = 11;
         for(var i=0; i < times; i++){
           thermostat.down();
         };
-        expect(function(){ thermostat.down() } ).toThrow("can not decreases temperature below 10")
+        expect(window.alert).toHaveBeenCalledWith('can not decrease temperature below 10');
       });
 
     });
