@@ -11,7 +11,7 @@ Thermostat.prototype = {
 
   up: function() {
     if (this._degrees >= 32 && !this.isPowerSaver())  {
-      alert('can not increase temperature above 32');
+      return alert('can not increase temperature above 32');
     }
     if (this._degrees >= 25 && this.isPowerSaver())  {
       alert('can not increase temperature above 25 when power saver is on');
@@ -34,7 +34,7 @@ Thermostat.prototype = {
     if (this._degrees <= 18) {
       return 'low';
     }
-    if (this._degrees <= 25 && this._degrees > 18) {
+    if (this._degrees <= 25 && this._degrees >= 18) {
       return 'medium';
     }
     else {

@@ -1,23 +1,72 @@
 .container {
   margin: auto;
   margin-top:10%;
-  width: 80%;
+  width: 60%;
   height: 500px;
   padding: 10px;
   text-align: center;
-  border-style: groove;
+  border: groove;
+  border-radius: 20px;
+  /*border-style: groove;
   border-width: thick;
   border-radius: 50px;
-  /*background-color: red;*/
 
   box-shadow: 0 0 1px rgba(0, 0, 0, 0.5) inset, 0 1px 1px #DDD;
-  border-radius:2px;
+  border-radius:2px;*/
 
   color:#666;
-  /*vertical-align: top;*/
-  /*line-height: 230px;*/
-  /*font-size: 12px;*/
 }
+
+body {
+  background-color: grey;
+}
+
+
+#current {
+  font-size: 30px;
+}
+
+.styled-select {
+   background: url(http://i62.tinypic.com/15xvbd5.png) no-repeat 96% 0;
+   border: groove;
+   margin:0 auto;
+   height: 29px;
+   overflow: hidden;
+   width: 240px;
+}
+
+.styled-select select {
+   background: transparent;
+   border: none;
+   font-size: 14px;
+   height: 29px;
+   padding: 5px;
+   width: 268px;
+}
+
+.styled-select.slate {
+   background: url(http://i62.tinypic.com/2e3ybe1.jpg) no-repeat right center;
+   height: 34px;
+   width: 240px;
+}
+
+.styled-select.slate select {
+   border: 1px solid #ccc;
+   font-size: 16px;
+   height: 34px;
+   width: 268px;
+}
+
+.rounded {
+   -webkit-border-radius: 20px;
+   -moz-border-radius: 20px;
+   border-radius: 20px;
+}
+
+.black   { background-color: #000; }
+
+.black select   { color: #fff; }
+
 
 button {
   width: 60px;
@@ -68,18 +117,21 @@ h1 {
   margin-top: 10%;
 }
 
-#low {
-background-color: green;
+.low {
+color: green;
 }
 
-#medium {
-background-color: black;
+#thermostat {
+background-color: silver;
 }
 
-#high {
-background-color: red;
+.high {
+color: red;
 }
 
+.medium {
+color: black;
+}
 
 
 .switch {
